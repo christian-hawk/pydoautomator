@@ -1,5 +1,6 @@
 import requests
 from behave import when, then, given
+from pydoautomator import Automator, Droplet
 
 
 @given(u'snapshot name is {snapshot}')
@@ -23,9 +24,22 @@ def step_impl(context, host):
 
 @when(u'I receive a droplet start call')
 def step_impl(context):
-    response = requests.post('http://localhost:5000/droplet/create', data={
-        "snapshot": context.snapshot
-    })
+    aut = Automator(context.token)
+
+    droplet_data = {
+        "name": "t1.techno24x7.com",
+        "region": "nyc1",
+        "size": "s-8vcpu-16gb",
+        "image": 68259296,
+        "ssh_keys": [27410347, 27608055, 27590881],
+        "private_networking": True,
+        "vpc_uuid": "47e5c00a-2b23-4dac-bed4-0e44659941f3",
+        "monitoring": True
+    }
+
+    droplet = Droplet(**droplet_data)
+
+    aut.create_droplet_from_snapshot(droplet)
 
 
 @then(u'droplet should be created')
