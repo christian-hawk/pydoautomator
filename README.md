@@ -1,4 +1,5 @@
 # pydoautomator
+The Digital Ocean python automation lib
 
 ``` python
 from pydoautomator import Automator, Droplet
