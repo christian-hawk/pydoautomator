@@ -1,14 +1,11 @@
 from unittest import TestCase
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 import inspect
 from pydoautomator.automator import Automator
 import pydoautomator
 from pydoautomator.droplet import Droplet
 from . import helper
-from .helper import AsyncMock
-import json
 import responses
-import time
 import asyncio
 import pytest
 from asyncio.futures import Future
