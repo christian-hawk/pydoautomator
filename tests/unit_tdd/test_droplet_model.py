@@ -90,7 +90,7 @@ class TestDropletClass(TestCase):
             'string'
         )
 
-    def test_if_region_is_required(self):
+    def test_if_size_is_required(self):
         self.assertIn(
             'size',
             Droplet.__annotations__,
@@ -146,10 +146,10 @@ class TestDropletClass(TestCase):
             Droplet.schema()['properties']
         )
 
-    def test_if_image_is_int(self):
+    def test_if_vpc_uuid_is_string(self):
         self.assertIs(
             Droplet.schema()['properties']['vpc_uuid']['type'],
-            'integer'
+            'string'
         )
 
     def test_if_model_has_monitoring(self):
@@ -158,8 +158,23 @@ class TestDropletClass(TestCase):
             Droplet.schema()['properties']
         )
 
-    def test_if_private_networking_is_bool(self):
+    def test_if_monitoring_is_bool(self):
         self.assertIs(
-            Droplet.schema()['properties']['private_networking']['type'],
+            Droplet.schema()['properties']['monitoring']['type'],
             'boolean'
         )
+
+    def test_object_creation(self):
+        try:
+            droplet = Droplet(**{
+                "name": "t1.techno24x7.com",
+                "region": "nyc1",
+                "size": "s-8vcpu-16gb",
+                "image": 68259296,
+                "ssh_keys": [27410347, 27608055, 27590881],
+                "private_networking": True,
+                "vpc_uuid": "47e5c00a-2b23-4dac-bed4-0e44659941f3",
+                "monitoring": True
+            })
+        except:
+            self.fail('Droplet object couldnt be created!')

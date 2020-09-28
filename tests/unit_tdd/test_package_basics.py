@@ -33,8 +33,3 @@ class TestPackageBasics(TestCase):
             pydoautomator.Droplet.__module__ == 'pydoautomator.droplet',
             'pydoautomator.Droplet is NOT a module from pydoautomator.droplet'
         )
-
-    def test_create_droplet_should_exist(self):
-        self.assertTrue(
-            hasattr(pydoautomator.Droplet, 'create_droplet')
-        )
