@@ -46,7 +46,7 @@ class Automator:
 
         while action_status == 'in-progress':
             await asyncio.sleep(5)
-            action_status == self.__check_action_status(action_id)
+            action_status = self.__check_action_status(action_id)
             print(action_status)
 
         if action_status == 'errored':
