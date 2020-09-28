@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pydoautomator",
-    version="0.1.2",
+    version="0.1.3",
     author="Christian Eland",
     author_email="eland.christian@gmail.com",
     description="The Digital Ocean automations lib",
@@ -20,4 +20,8 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
+    install_requires=[
+        "pydantic>=1.6.1",
+        "requests>=2.24.0"
+    ]
 )
