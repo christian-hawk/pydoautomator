@@ -114,7 +114,7 @@ async def test_wait_till_complete_should_raise_error():
 
         aut._Automator__check_action_status = MagicMock(return_value='errored')
 
-        result = await aut._Automator__wait_till_action_complete(action_id)
+        await aut._Automator__wait_till_action_complete(action_id)
 
     aut._Automator__check_action_status = check
 
