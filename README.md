@@ -18,9 +18,9 @@ droplet_data = {
     "size" : "s-8vcpu-16gb",
     "image" : 68259296,
     "ssh_keys" : [27410347, 27608055, 27590881],
-    "private_networking" : true,
+    "private_networking" : True,
     "vpc_uuid" : "47e5c00a-2b23-4dac-bed4-0e44659941f3",
-    "monitoring" : true
+    "monitoring" : True
 }
 
 droplet = Droplet(**droplet_data)

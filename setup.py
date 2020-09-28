@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pydoautomator",  # Replace with your own username
-    version="0.1.1",
+    name="pydoautomator",
+    version="0.1.2",
     author="Christian Eland",
     author_email="eland.christian@gmail.com",
     description="The Digital Ocean automations lib",
