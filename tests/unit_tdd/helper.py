@@ -1,18 +1,6 @@
 import json
 from unittest.mock import MagicMock
 
-
-# Helper functions / classes
-class AsyncMock(MagicMock):
-    """AsyncMock for mocking async in python < 3.8
-
-    :param MagicMock: super is MagicMock
-    :type MagicMock: MagicMock class
-    """
-    async def __call__(self, *args, **kwargs):
-        return super(AsyncMock, self).__call__(*args, **kwargs)
-
-
 # Test data
 
 valid_droplet = {
