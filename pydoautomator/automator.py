@@ -1,6 +1,5 @@
 from pydoautomator.droplet import Droplet
 from pydoautomator.adapters import ApiAdapter
-import time
 import asyncio
 from pydoautomator.errors import DropletCreationError
 
