@@ -28,6 +28,6 @@ jobs:
               run: |
                 pip install pytest
                 pip install pytest-cov
-                python -m pytest --cov=./ --cov-report=xml
+                python -m pytest --cov=./ --cov-report=xml tests/unit_tdd
             - name: Upload coverage to Codecov
               uses: codecov/codecov-action@v1

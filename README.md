@@ -1,4 +1,7 @@
 # pydoautomator
+
+[![codecov](https://codecov.io/gh/christian-hawk/pydoautomator/branch/master/graph/badge.svg)](https://codecov.io/gh/christian-hawk/pydoautomator)
+
 The Digital Ocean python automation lib
 
 Alpha
