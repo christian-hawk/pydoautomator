@@ -193,14 +193,6 @@ class TestAutomator(TestCase):
             pydoautomator.droplet.Droplet
         )
 
-    # def test_if_snapshot_id_arg_has_int_annotation(self):
-    #     annotations = inspect.getfullargspec(
-    #         Automator.create_droplet_from_snapshot).annotations
-    #     self.assertIs(
-    #         annotations['snapshot_id'],
-    #         int
-    #     )
-
     def test_if_Automator_has_requests(self):
         self.assertTrue(
             hasattr(pydoautomator.automator.Automator, 'requests'),
@@ -292,7 +284,8 @@ class TestAutomator(TestCase):
         aut.requests.post = MagicMock()
         aut.create_droplet_from_snapshot(droplet_instance)
         aut.requests.post.assert_called_once_with(
-            url, data=droplet_instance.json())
+            url, data=droplet_instance.json(),
+            headers={'Content-Type': 'application/json'})
 
     def test_check_action_status_should_exist(self):
         self.assertTrue(
@@ -314,15 +307,6 @@ class TestAutomator(TestCase):
             'action_id',
             args
         )
-
-    # def test_whatever(self):
-    #     token = 'my-test-token-234'
-    #     aut = Automator(token)
-    #     aut.requests.post = MagicMock()
-    #     aut.requests.post.json = MagicMock(
-    #         return_value=helper.valid_droplet_created_response)
-    #     aut.create_droplet_from_snapshot(droplet_instance)
-    #     Automator = self.automator_stash
 
     def test_check_action_status_should_call_get_once_with_args(self):
         token = 'my-test-token-234'
@@ -400,33 +384,34 @@ class TestAutomator(TestCase):
         # restore stashed
         aut._Automator__check_action_status = self.check
 
-    # @responses.activate
-    # def test_wait_till_complete_should_call_check_action_status_each_5_secs(self):
-    #     token = 'my-test-token-234'
-    #     action_id = 1030573508
-    #     aut = Automator(token)
-    #     url = 'https://api.digitalocean.com/v2/actions/' + str(action_id)
-    #     # mock response
-    #     responses.add(responses.GET, url,
-    #                   json=helper.valid_creation_in_progress_response, status=200)
-    #     # stash
-    #     self.check = aut._Automator__check_action_status
+    def test_create_droplet_request_should_have_headers_element(self):
+        token = 'my-test-token-234'
+        aut = Automator(token)
 
-    #     aut._Automator__check_action_status = MagicMock(
-    #         name='__check_action_status', return_value='in-progress')
+        # mock complete action response
+        aut._Automator__check_action_status = MagicMock(
+            return_value='complete')
+        # mock post
+        aut.requests.post = MagicMock()
 
-    #     await aut._Automator__wait_till_action_complete(action_id)
-    #     time.sleep(12)
+    def test_create_droplet_request_should_have_json_headers(self):
+        expected_args = {
+            'data': '{"id": null, "name": "t1.techno24x7.com", "region": "nyc1", "size": "s-8vcpu-16gb", "image": 68259296, "ssh_keys": [27410347, 27608055, 27590881], "private_networking": true, "vpc_uuid": "47e5c00a-2b23-4dac-bed4-0e44659941f3", "monitoring": true}',
+            'headers': {
+                'Content-Type': 'application/json'
+            }}
+        token = 'my-test-token-234'
+        aut = Automator(token)
 
-    #     aut._Automator__check_action_status = MagicMock(
-    #         name='__check_action_status', return_value='completed')
+        # mock complete action response
+        aut._Automator__check_action_status = MagicMock(
+            return_value='complete')
+        # mock post
+        aut.requests.post = MagicMock()
 
-    #     # should be called 2 times in 12 secs
-    #     self.assertEqual(
-    #         aut._Automator__check_action_status.call_count,
-    #         2,
-    #         '__check_action_status was NOT called 2 times'
-    #     )
+        aut.create_droplet_from_snapshot(droplet_instance)
 
-    #     # restore
-    #     aut._Automator__check_action_status = self.check
+        self.assertIn(
+            expected_args,
+            aut.requests.post.call_args
+        )
