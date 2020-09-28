@@ -25,9 +25,9 @@ class Automator:
         :return: created droplet ID
         :rtype: int
         """
-
+        headers = {'Content-Type': 'application/json'}
         created_droplet = self.requests.post(
-            self.__base_url + '/droplets', data=droplet.json())
+            self.__base_url + '/droplets', data=droplet.json(), headers=headers)
 
         print(created_droplet.json())
 
