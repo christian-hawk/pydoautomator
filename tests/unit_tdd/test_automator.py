@@ -181,7 +181,7 @@ class TestAutomator(TestCase):
             Automator.create_droplet_from_snapshot).args)
 
         self.assertTrue(
-            expected_args <= current_args and current_args <= expected_args,
+            expected_args <= current_args <= expected_args,
             'create_droplet_from_snapshot does NOT have expected arguments'
         )
 
