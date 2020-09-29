@@ -15,6 +15,19 @@ class Automator:
         self.requests = self.api_adapter.requests
         self.__base_url = 'https://api.digitalocean.com/v2'
 
+    def assign_floating_ip_to_droplet(self, floating_ip: str, droplet_id: int) -> str:
+        """Assigns a floating_ip to a droplet
+
+        :param floating_ip: floating ip
+        :type floating_ip: str
+        :param droplet_id: droplet id
+        :type droplet_id: int
+        :return: droplet id that received the new floating ip
+        :rtype: str
+        """
+
+        self.requests.post()
+
     def create_droplet_from_snapshot(self, droplet: Droplet) -> int:
         """creates droplet from snapshot
 
