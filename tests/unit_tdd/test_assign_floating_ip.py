@@ -128,6 +128,7 @@ def test_if_response_status_201_return_completed():
 
     result = aut.assign_floating_ip_to_droplet(floating_ip, droplet_id)
     assert result == 'completed'
+    aut._Automator__check_action_status = stashed
 
 
 @responses.activate
