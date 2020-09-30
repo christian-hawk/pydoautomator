@@ -10,6 +10,7 @@ import asyncio
 import pytest
 from asyncio.futures import Future
 from pydoautomator.errors import DropletCreationError
+import requests
 
 
 droplet_instance = Droplet(**helper.valid_droplet)
