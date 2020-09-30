@@ -1,5 +1,7 @@
 ## 0.3.0 (2020-09-29)
 
+## 0.3.0 (2020-09-29)
+
 ### Feat
 
 - **automator.py**: assign floating ip to droplet
