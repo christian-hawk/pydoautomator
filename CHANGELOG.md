@@ -1,4 +1,8 @@
-## 0.3.0 (2020-09-29)
+## Unreleased
+
+### Refactor
+
+- **anti-patterns**: Fixed anti-patterns
 
 ## 0.3.0 (2020-09-29)
 
