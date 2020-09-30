@@ -1,11 +1,6 @@
-import ipdb
 import responses
-import pytest
+
 # mock api responses
-
-# valid droplet (id 209808688, 209808839)
-
-# def request_callback(request, data, )
 
 
 def error_404_response(url):
@@ -272,10 +267,3 @@ def existing_droplet_response():
             }
         },
         status=200)
-
-
-@responses.activate
-def test_response_mock():
-    valid_retrieve_droplet_response()
-    import ipdb
-    ipdb.set_trace()
