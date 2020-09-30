@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pydoautomator",
-    version="0.1.3",
+    version="0.3.1",
     author="Christian Eland",
     author_email="eland.christian@gmail.com",
     description="The Digital Ocean automations lib",

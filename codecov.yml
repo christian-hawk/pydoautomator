@@ -1,3 +1,4 @@
 ignore:
     - "tests/**/*.py"
     - "setup.py"
+    - "pydoautomator/settings.py"
