@@ -1,3 +1,9 @@
+## 0.4.0 (2020-10-04)
+
+### Feat
+
+- **Automator**: Add get_all_droplets to Automator
+
 ## 0.3.1 (2020-09-29)
 
 ### Refactor
