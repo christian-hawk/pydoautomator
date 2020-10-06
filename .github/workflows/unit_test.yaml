@@ -24,10 +24,10 @@ jobs:
                 python -m pip install poetry
                 python -m pip install --upgrade pip
                 poetry install
+                python -m pytest --cov=./ --cov-report=xml tests/unit_tdd
             - name: Test with pytest
               run: |
-                pip install pytest
-                pip install pytest-cov
+
                 python -m pytest --cov=./ --cov-report=xml tests/unit_tdd
             - name: Upload coverage to Codecov
               uses: codecov/codecov-action@v1
