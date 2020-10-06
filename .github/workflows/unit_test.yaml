@@ -21,14 +21,14 @@ jobs:
                 python-version: '3.6'
             - name: Install dependencies
               run: |
+                python --version
                 python -m pip install poetry
                 python -m pip install --upgrade pip
                 poetry install
-                poetry shell
-                python -m pytest --cov=./ --cov-report=xml tests/unit_tdd
+                poetry run python -m pytest --cov=./ --cov-report=xml tests/unit_tdd
             - name: Test with pytest
               run: |
-
-                python -m pytest --cov=./ --cov-report=xml tests/unit_tdd
+                poetry run python -m pytest --cov=./ --cov-report=xml tests/unit_tdd
+               
             - name: Upload coverage to Codecov
               uses: codecov/codecov-action@v1
