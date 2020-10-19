@@ -9,7 +9,7 @@ from pydoautomator.errors import FloatingIpAssignmentError
 import requests
 
 
-def test_assign_floating_ip_to_dropletshould_exist():
+def test_assign_floating_ip_to_droplet_should_exist():
     assert hasattr(Automator, 'assign_floating_ip_to_droplet')
 
 
