@@ -1,7 +1,7 @@
 from pydoautomator.droplet import Droplet
 from pydoautomator.adapters import ApiAdapter
 import asyncio
-from pydoautomator.errors import DropletCreationError, FloatingIpAssignmentError
+from pydoautomator.errors import DropletCreationError, FloatingIpAssignmentError, TurnoffDropletError
 
 
 class Automator:
@@ -14,6 +14,27 @@ class Automator:
         self.api_adapter = ApiAdapter(self.do_token)
         self.requests = self.api_adapter.requests
         self.__base_url = 'https://api.digitalocean.com/v2'
+
+    def turnoff_droplet(self, droplet_id: int) -> str:
+        headers = {'Content-Type': 'application/json'}
+        data = {'type': 'shutdown'}
+
+        response = self.requests.post(
+            self.__base_url+'/droplets/'+str(droplet_id)+'/actions',
+            headers=headers,
+            json=data
+        )
+
+        if response.status_code != 201:
+            raise TurnoffDropletError(response.json())
+
+        action_id = response.json()['action']['id']
+
+        loop2 = asyncio.get_event_loop()
+        loop2.run_until_complete(
+            self.__wait_till_action_complete(action_id)
+        )
+        return "completed"
 
     def get_all_droplets(self) -> list:
         response = self.requests.get(self.__base_url+'/droplets')

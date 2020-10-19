@@ -14,6 +14,108 @@ def error_404_response(url):
     )
 
 
+def shutdown_droplet_success_response(droplet_id: int):
+    """needs to be used with @responses.activate"""
+    response_action_data = {
+        "action": {
+            "id": 1047023793,
+            "status": "in-progress",
+            "type": "shutdown",
+            "started_at": "2020-10-18T19:20:00Z",
+            "completed_at": None,
+            "resource_id": droplet_id,
+            "resource_type": "droplet",
+            "region": {
+                "name": "New York 1",
+                "slug": "nyc1",
+                "features": [
+                    "private_networking",
+                    "backups",
+                    "ipv6",
+                    "metadata",
+                    "install_agent",
+                    "storage",
+                    "image_transfer"
+                ],
+                "available": True,
+                "sizes": [
+                    "s-1vcpu-1gb",
+                    "512mb",
+                    "s-1vcpu-2gb",
+                    "1gb",
+                    "s-3vcpu-1gb",
+                    "s-2vcpu-2gb",
+                    "s-1vcpu-3gb",
+                    "s-2vcpu-4gb",
+                    "2gb",
+                    "s-4vcpu-8gb",
+                    "m-1vcpu-8gb",
+                    "c-2",
+                    "4gb",
+                    "c2-2vcpu-4gb",
+                    "g-2vcpu-8gb",
+                    "gd-2vcpu-8gb",
+                    "m-16gb",
+                    "s-8vcpu-16gb",
+                    "s-6vcpu-16gb",
+                    "c-4",
+                    "8gb",
+                    "c2-4vpcu-8gb",
+                    "m-2vcpu-16gb",
+                    "m3-2vcpu-16gb",
+                    "g-4vcpu-16gb",
+                    "gd-4vcpu-16gb",
+                    "m6-2vcpu-16gb",
+                    "m-32gb",
+                    "s-8vcpu-32gb",
+                    "c-8",
+                    "c2-8vpcu-16gb",
+                    "m-4vcpu-32gb",
+                    "m3-4vcpu-32gb",
+                    "g-8vcpu-32gb",
+                    "s-12vcpu-48gb",
+                    "gd-8vcpu-32gb",
+                    "m6-4vcpu-32gb",
+                    "m-64gb",
+                    "s-16vcpu-64gb",
+                    "c-16",
+                    "32gb",
+                    "c2-16vcpu-32gb",
+                    "m-8vcpu-64gb",
+                    "m3-8vcpu-64gb",
+                    "g-16vcpu-64gb",
+                    "s-20vcpu-96gb",
+                    "48gb",
+                    "gd-16vcpu-64gb",
+                    "m6-8vcpu-64gb",
+                    "m-128gb",
+                    "s-24vcpu-128gb",
+                    "c-32",
+                    "64gb",
+                    "c2-32vpcu-64gb",
+                    "m-16vcpu-128gb",
+                    "m3-16vcpu-128gb",
+                    "g-32vcpu-128gb",
+                    "s-32vcpu-192gb",
+                    "m-24vcpu-192gb",
+                    "m6-16vcpu-128gb",
+                    "m3-24vcpu-192gb",
+                    "m6-24vcpu-192gb",
+                    "m3-32vcpu-256gb",
+                    "m6-32vcpu-256gb"
+                ]
+            },
+            "region_slug": "nyc1"
+        }
+    }
+    responses.add(
+        responses.POST,
+        url='https://api.digitalocean.com/v2/droplets/%s/actions' % droplet_id,
+        json=response_action_data,
+        status=201
+    )
+
+
 def assign_floating_ip_success_response(floating_ip: str, droplet_id: int):
     """needs to be used with @responses.activate
     Successfull responses for params
