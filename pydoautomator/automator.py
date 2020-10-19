@@ -16,6 +16,14 @@ class Automator:
         self.__base_url = 'https://api.digitalocean.com/v2'
 
     def turnoff_droplet(self, droplet_id: int) -> str:
+        """[summary]
+
+        :param droplet_id: droplet id
+        :type droplet_id: int
+        :raises TurnoffDropletError: when no success on request
+        :return: 'completed' if completed
+        :rtype: str
+        """
         headers = {'Content-Type': 'application/json'}
         data = {'type': 'shutdown'}
 
