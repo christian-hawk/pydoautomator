@@ -103,3 +103,7 @@ def test_if_response_not_201_raise_error():
         aut.turnoff_droplet(droplet_id)
 
     responses.reset()
+
+
+def test_automate_droplet_should_have_docstring():
+    assert inspect.getdoc(Automator.turnoff_droplet) is not None
