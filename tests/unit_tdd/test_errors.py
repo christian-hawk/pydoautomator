@@ -1,7 +1,7 @@
 import pytest
 from pydoautomator import errors
 import inspect
-from pydoautomator.errors import DropletCreationError, FloatingIpAssignmentError, TurnoffDropletError
+from pydoautomator.errors import DropletCreationError, FloatingIpAssignmentError, TurnoffDropletError, DestroyDropletError
 
 
 def test_if_submodule_automator_exists():
@@ -69,3 +69,24 @@ def test_turnoff_droplet_should_have_msg():
 
     with pytest.raises(TurnoffDropletError, match=expected_msg):
         raise TurnoffDropletError(msg)
+
+
+def test_destroy_droplet_error_should_exist():
+    assert hasattr(errors, 'DestroyDropletError')
+
+
+def test_destroy_droplet_error_should_be_a_class():
+    assert inspect.isclass(errors.DestroyDropletError)
+
+
+def test_destroy_droplet_error_should_be_exception_subclass():
+    assert issubclass(errors.DestroyDropletError, Exception)
+
+
+def test_destroy_droplet_should_have_msg():
+    msg = {'error': 'this error message was sent'}
+    expected_msg = 'Error destroying droplet. Response data is: ' + \
+        str(msg)
+
+    with pytest.raises(DestroyDropletError, match=expected_msg):
+        raise DestroyDropletError(msg)

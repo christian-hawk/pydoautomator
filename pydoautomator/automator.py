@@ -1,7 +1,7 @@
 from pydoautomator.droplet import Droplet
 from pydoautomator.adapters import ApiAdapter
 import asyncio
-from pydoautomator.errors import DropletCreationError, FloatingIpAssignmentError, TurnoffDropletError
+from pydoautomator.errors import DropletCreationError, FloatingIpAssignmentError, TurnoffDropletError, DestroyDropletError
 
 
 class Automator:
@@ -102,6 +102,16 @@ class Automator:
 
         return created_droplet.json()['droplet']['id']
 
+    def destroy_droplet(self, droplet_id: int) -> str:
+        response = self.requests.delete(
+            self.__base_url + '/droplets/' + str(droplet_id)
+        )
+
+        if response.status_code != 204:
+            raise DestroyDropletError(response.json())
+
+        return 'completed'
+
     async def __wait_till_action_complete(self, action_id: int) -> str:
         action_status = self.__check_action_status(action_id)
 
@@ -115,7 +125,8 @@ class Automator:
         return action_status
 
     def __check_action_status(self, action_id: int) -> str:
-        """Check action status
+        """
+        Check action status
 
         :param action_id: action ID
         :type action_id: int

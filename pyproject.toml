@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydoautomator"
-version = "0.5.0"
+version = "0.5.1"
 description = "The Python lib for digital ocean automation"
 authors = ["Christian Eland <eland.christian@gmail.com>"]
 license = "Apache-2.0"
@@ -34,7 +34,7 @@ commitizen = "^2.4.1"
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.5.0"
+version = "0.5.1"
 tag_format = "$version"
 
 [build-system]

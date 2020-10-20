@@ -12,3 +12,8 @@ class FloatingIpAssignmentError(Exception):
 class TurnoffDropletError(Exception):
     def __init__(self, msg):
         super().__init__('Error shutting down droplet. Response data is: ' + str(msg))
+
+
+class DestroyDropletError(Exception):
+    def __init__(self, msg):
+        super().__init__('Error destroying droplet. Response data is: ' + str(msg))

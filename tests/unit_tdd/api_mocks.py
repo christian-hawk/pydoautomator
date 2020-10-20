@@ -4,13 +4,31 @@ import responses
 
 
 def error_404_response(url):
-    """Respond a 404 with dummy json
+    """
+    Respond a 404 with dummy json
+    works with POST and DELETE
     """
     responses.add(
         responses.POST,
         url=url,
         json={'any_key': 'any_value'},
         status=404
+    )
+    responses.add(
+        responses.DELETE,
+        url=url,
+        json={'any_key': 'any_value'},
+        status=404
+    )
+
+
+def destroy_droplet_success_response(droplet_id: int):
+    """needs to be used with @responses.activate"""
+    responses.add(
+        responses.DELETE,
+        url='https://api.digitalocean.com/v2/droplets/%s' % droplet_id,
+        json="",
+        status=204
     )
 
 
