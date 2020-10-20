@@ -268,6 +268,8 @@ class TestAutomator(TestCase):
         responses.add(responses.POST, droplet_url,
                       json=helper.valid_droplet_created_response, status=200)
 
+        stashed = aut.requests.post
+
         aut.requests.post = MagicMock()
 
         aut.create_droplet_from_snapshot(droplet_instance)
@@ -275,17 +277,23 @@ class TestAutomator(TestCase):
         aut.requests.post.assert_called_once()
         aut.requests.posts = self.post
 
+        aut.requests.post = stashed
+
     def test_create_droplet_from_snapshot_should_call_post_with_args(self):
         token = 'my-test-token-234'
         url = 'https://api.digitalocean.com/v2/droplets'
         aut = Automator(token)
         aut._Automator__check_action_status = MagicMock(
             return_value='completed')
+
+        stashed = aut.requests.post
         aut.requests.post = MagicMock()
         aut.create_droplet_from_snapshot(droplet_instance)
         aut.requests.post.assert_called_once_with(
             url, data=droplet_instance.json(),
             headers={'Content-Type': 'application/json'})
+
+        aut.requests.post = stashed
 
     def test_check_action_status_should_exist(self):
         self.assertTrue(
@@ -384,16 +392,6 @@ class TestAutomator(TestCase):
         # restore stashed
         aut._Automator__check_action_status = self.check
 
-    def test_create_droplet_request_should_have_headers_element(self):
-        token = 'my-test-token-234'
-        aut = Automator(token)
-
-        # mock complete action response
-        aut._Automator__check_action_status = MagicMock(
-            return_value='complete')
-        # mock post
-        aut.requests.post = MagicMock()
-
     def test_create_droplet_request_should_have_json_headers(self):
         expected_args = {
             'data': '{"id": null, "name": "t1.techno24x7.com", "region": "nyc1", "size": "s-8vcpu-16gb", "image": 68259296, "ssh_keys": [27410347, 27608055, 27590881], "private_networking": true, "vpc_uuid": "47e5c00a-2b23-4dac-bed4-0e44659941f3", "monitoring": true}',
@@ -407,6 +405,7 @@ class TestAutomator(TestCase):
         aut._Automator__check_action_status = MagicMock(
             return_value='complete')
         # mock post
+        stashed = aut.requests.post
         aut.requests.post = MagicMock()
 
         aut.create_droplet_from_snapshot(droplet_instance)
@@ -415,3 +414,4 @@ class TestAutomator(TestCase):
             expected_args,
             aut.requests.post.call_args
         )
+        aut.requests.post = stashed

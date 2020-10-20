@@ -1,3 +1,17 @@
+## 0.5.0 (2020-10-19)
+
+### Feat
+
+- **automator.py**: turnoff_droplet
+
+### Refactor
+
+- **test_assign_floating_ip.py**: fixed typo
+
+### Fix
+
+- **test_automator.py**: Stash mocks after each use
+
 ## 0.4.0 (2020-10-04)
 
 ### Feat
