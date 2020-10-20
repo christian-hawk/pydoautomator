@@ -4,7 +4,9 @@
 
 The Digital Ocean python automation lib
 
-Alpha
+## Install
+
+`pip install pydoautomator`
 
 ## Simple as that
 
@@ -45,7 +47,7 @@ if action_status == 'completed':
 ### Create droplet and assign floating ip as soon as droplet created
 
 ```python
-igital_ocean_token = 'my-super-cool-digital-ocean-api-token'
+digital_ocean_token = 'my-super-cool-digital-ocean-api-token'
 
 aut = Automator(digital_ocean_token)
 
@@ -70,4 +72,18 @@ action_status = aut.assign_floating_ip_to_droplet(floating_ip, droplet_id)
 
 if action_status == 'completed':
     print('floating_ip assigned to droplet!')
+```
+
+### Shutdown / turnoff droplet
+
+```python
+droplet_id = 123456
+aut.turnoff_droplet(droplet_id)
+```
+
+### Destroy droplet by id
+
+```python
+droplet_id = 123456
+aut.destroy_droplet(droplet_id)
 ```

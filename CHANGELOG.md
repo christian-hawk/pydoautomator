@@ -1,3 +1,13 @@
+## 0.6.0 (2020-10-20)
+
+### Feat
+
+- **automator.py**: Destroy droplet feature
+
+### Fix
+
+- **pyproject.toml**: Fix importlib module required for some python versions (not native)
+
 ## 0.5.0 (2020-10-19)
 
 ### Feat
