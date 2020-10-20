@@ -1,4 +1,4 @@
-from behave import when, then, given
+from behave import when, then
 from pydoautomator import Automator
 import requests
 
