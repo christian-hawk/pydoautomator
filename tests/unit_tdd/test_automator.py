@@ -394,7 +394,7 @@ class TestAutomator(TestCase):
 
     def test_create_droplet_request_should_have_json_headers(self):
         expected_args = {
-            'data': '{"id": null, "name": "t1.techno24x7.com", "region": "nyc1", "size": "s-8vcpu-16gb", "image": 68259296, "ssh_keys": [27410347, 27608055, 27590881], "private_networking": true, "vpc_uuid": "47e5c00a-2b23-4dac-bed4-0e44659941f3", "monitoring": true}',
+            'data': '{"id": null, "name": "t1.techno24x7.com", "region": "nyc1", "size": "s-8vcpu-16gb", "image": 68259296, "ssh_keys": [27410347, 27608055, 27590881], "private_networking": true, "vpc_uuid": "47e5c00a-2b23-4dac-bed4-0e44659941f3", "monitoring": true, "tags": []}',
             'headers': {
                 'Content-Type': 'application/json'
             }}
