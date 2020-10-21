@@ -1,3 +1,9 @@
+## 0.7.0 (2020-10-21)
+
+### Feat
+
+- **droplet.py**: add tags field to droplet model
+
 ## 0.6.0 (2020-10-20)
 
 ### Feat

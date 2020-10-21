@@ -25,6 +25,7 @@ droplet_data = {
     "private_networking" : True,
     "vpc_uuid" : "47e5c00a-2b23-4dac-bed4-0e44659941f3",
     "monitoring" : True
+    "tags" : ["tests"]
 }
 
 droplet = Droplet(**droplet_data)
