@@ -2,6 +2,7 @@ from unittest import TestCase
 import pydoautomator
 from pydoautomator.droplet import Droplet
 from pydantic import BaseModel
+from typing import List
 
 
 class TestDropletClass(TestCase):
@@ -164,6 +165,18 @@ class TestDropletClass(TestCase):
             'boolean'
         )
 
+    def test_if_model_has_tags(self):
+        self.assertIn(
+            'tags',
+            Droplet.schema()['properties']
+        )
+
+    def test_if_tags_is_array(self):
+        self.assertIs(
+            Droplet.schema()['properties']['tags']['type'],
+            'array'
+        )
+
     def test_object_creation(self):
         try:
             droplet = Droplet(**{
@@ -174,7 +187,8 @@ class TestDropletClass(TestCase):
                 "ssh_keys": [27410347, 27608055, 27590881],
                 "private_networking": True,
                 "vpc_uuid": "47e5c00a-2b23-4dac-bed4-0e44659941f3",
-                "monitoring": True
+                "monitoring": True,
+                "tags": ['tag1']
             })
         except:
             self.fail('Droplet object couldnt be created!')

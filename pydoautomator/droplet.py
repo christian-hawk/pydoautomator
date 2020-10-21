@@ -12,3 +12,4 @@ class Droplet(BaseModel):
     private_networking: bool = True
     vpc_uuid: str
     monitoring: bool = True
+    tags: List[str] = []
