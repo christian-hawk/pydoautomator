@@ -1,3 +1,13 @@
+## 0.8.1 (2020-10-24)
+
+### Refactor
+
+- **.gitignore**: add .vscode
+
+### Fix
+
+- **droplet.py**: vpc_uuid is now optional
+
 ## 0.8.0 (2020-10-24)
 
 - Add auto-bump
