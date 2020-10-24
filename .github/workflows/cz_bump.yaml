@@ -1,31 +1,22 @@
 name: Version bump
 
 on:
-    push:
-      branches:
-        - develop
-        - master
+  push:
+    branches:
+      - master
 
 jobs:
-    buid:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - name: Set up Python
-              uses: actions/setup-python@v2
-              with:
-                python-version: '3.6'
-            - name: Install dependencies
-              run: |
-                python --version
-                python -m pip install poetry
-                python -m pip install --upgrade pip
-                poetry install
-                git push --tags
-            - name: Bump Version
-              run: |
-                poetry run cz bump -cc --changelog
-            - name: Push bump
-              run: |
-                git push origin master
-                git push --tags
+  bump-version:
+    if: "!startsWith(github.event.head_commit.message, 'bump:')"
+    runs-on: ubuntu-latest
+    name: "Bump version and create changelog with commitizen"
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+        with:
+          token: '${{ secrets.PERSONAL_ACCESS_TOKEN }}'
+          fetch-depth: 0
+      - name: Create bump and changelog
+        uses: commitizen-tools/commitizen-action@master
+        with:
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
