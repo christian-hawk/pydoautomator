@@ -1,0 +1,30 @@
+name: Version bump
+
+on:
+    push:
+      branches:
+        - develop
+        - master
+
+jobs:
+    buid:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Set up Python
+              uses: actions/setup-python@v2
+              with:
+                python-version: '3.6'
+            - name: Install dependencies
+              run: |
+                python --version
+                python -m pip install poetry
+                python -m pip install --upgrade pip
+                poetry install
+            - name: Bump Version
+              run: |
+                poetry run cz bump -cc --changelog
+            - name: Push bump
+              run: |
+                git push origin master
+                git push --tags

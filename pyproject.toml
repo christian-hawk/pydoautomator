@@ -36,6 +36,9 @@ commitizen = "^2.4.1"
 name = "cz_conventional_commits"
 version = "0.7.0"
 tag_format = "$version"
+version_files = [
+    "pyproject.toml:version"
+]
 
 [build-system]
 requires = ["poetry>=0.12"]
