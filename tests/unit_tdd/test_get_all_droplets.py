@@ -32,7 +32,7 @@ class TestGetAllDroplets():
         list_droplets_response()
         response = requests.get('https://api.digitalocean.com/v2/droplets')
         aut.requests.get = MagicMock(return_value=response)
-        assert type(aut.get_all_droplets()) == list
+        assert type(aut.get_all_droplets()) is list
 
     @responses.activate
     def test_get_all_droplets_item_should_contain_keys(self):
