@@ -21,6 +21,7 @@ jobs:
                 python -m pip install poetry
                 python -m pip install --upgrade pip
                 poetry install
+                git push --tags
             - name: Bump Version
               run: |
                 poetry run cz bump -cc --changelog
