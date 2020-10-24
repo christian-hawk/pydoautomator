@@ -10,6 +10,6 @@ class Droplet(BaseModel):
     image: int
     ssh_keys: List[int] = []
     private_networking: bool = True
-    vpc_uuid: str
+    vpc_uuid: str = None
     monitoring: bool = True
     tags: List[str] = []

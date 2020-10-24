@@ -192,3 +192,18 @@ class TestDropletClass(TestCase):
             })
         except:
             self.fail('Droplet object couldnt be created!')
+
+    def test_object_creation_without_vvc_uid(self):
+        try:
+            droplet = Droplet(**{
+                "name": "t1.techno24x7.com",
+                "region": "nyc1",
+                "size": "s-8vcpu-16gb",
+                "image": 68259296,
+                "ssh_keys": [27410347, 27608055, 27590881],
+                "private_networking": True,
+                "monitoring": True,
+                "tags": ['tag1']
+            })
+        except:
+            self.fail('Droplet object couldnt be created!')
