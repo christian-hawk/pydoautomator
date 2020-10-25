@@ -1,5 +1,4 @@
 from unittest import TestCase
-import pydoautomator
 from pydoautomator.droplet import Droplet
 from pydantic import BaseModel
 from typing import List
@@ -9,7 +8,7 @@ class TestDropletClass(TestCase):
 
     def test_if_droplet_submodule_exists(self):
         try:
-            import pydoautomator.droplet as droplet
+            import pydoautomator.droplet as droplet  # skipcq: PYL-W0611
         except ModuleNotFoundError:
             self.fail('submodule does not exist!')
 
