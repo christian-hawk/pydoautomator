@@ -6,7 +6,7 @@ from pydoautomator.errors import DropletCreationError, FloatingIpAssignmentError
 
 def test_if_submodule_automator_exists():
     try:
-        import pydoautomator.errors as errors
+        import pydoautomator.errors as errors  # skipcq: PYL-W0611
     except ModuleNotFoundError:
         pytest.fail('submodule errors does NOT exist')
 
