@@ -1,6 +1,6 @@
 # pydoautomator
 
-[![codecov](https://codecov.io/gh/christian-hawk/pydoautomator/branch/master/graph/badge.svg)](https://codecov.io/gh/christian-hawk/pydoautomator)
+[![codecov](https://codecov.io/gh/christian-hawk/pydoautomator/branch/master/graph/badge.svg)](https://codecov.io/gh/christian-hawk/pydoautomator)  [![DeepSource](https://deepsource.io/gh/christian-hawk/pydoautomator.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/christian-hawk/pydoautomator/?ref=repository-badge)
 
 The Digital Ocean python automation lib
 
