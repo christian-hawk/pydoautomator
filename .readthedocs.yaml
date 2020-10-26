@@ -4,3 +4,10 @@ mkdocs:
   configuration: mkdocs.yml
   fail_on_warning: false
 
+python:
+    version: 3.6.9
+    install:
+        - method: pip
+          path: .
+          extra_requirements:
+              - mkdocstrings

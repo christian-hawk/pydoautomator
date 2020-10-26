@@ -1,6 +1,5 @@
 site_name: Pydoautomator
 
-theme: readthedocs
 
 nav:
     - Getting Started: 'getting_started.md'
