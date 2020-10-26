@@ -5,25 +5,47 @@ from pydoautomator.errors import DropletCreationError, FloatingIpAssignmentError
 
 
 class Automator:
+    """Here are the main methods / functions
+    Call this class passing the Digital Ocean TOKEN.
+
+    Raises:
+        TurnoffDropletError: Error while shutting down droplet
+        FloatingIpAssignmentError: Error while assigning floating ip
+        DestroyDropletError: Error while destroying droplet
+        DropletCreationError: Error while creating droplet
+
+    """
+
     do_token = ''
+
     requests = ''
     __base_url = 'https://api.digitalocean.com/v2'
 
     def __init__(self, do_token: str):
+        """constructor
+
+        Args:
+            do_token (str): digital ocean token
+        """
+
         self.do_token = do_token
         self.api_adapter = ApiAdapter(self.do_token)
         self.requests = self.api_adapter.requests
         self.__base_url = 'https://api.digitalocean.com/v2'
 
     def turnoff_droplet(self, droplet_id: int) -> str:
-        """[summary]
+        """Turnoff / Shutdown Droplet
 
-        :param droplet_id: droplet id
-        :type droplet_id: int
-        :raises TurnoffDropletError: when no success on request
-        :return: 'completed' if completed
-        :rtype: str
+        Args:
+            droplet_id (int): droplet id
+
+        Raises:
+            TurnoffDropletError: Error if droplet is not shutdown
+
+        Returns:
+            str: `completed`
         """
+
         headers = {'Content-Type': 'application/json'}
         data = {'type': 'shutdown'}
 
@@ -45,19 +67,30 @@ class Automator:
         return "completed"
 
     def get_all_droplets(self) -> list:
+        """Get all droplets from Digital Ocean
+
+        Returns:
+            list: list of droplets (dict)
+        """
+
         response = self.requests.get(self.__base_url+'/droplets')
+
         return response.json()['droplets']
 
     def assign_floating_ip_to_droplet(self, floating_ip: str, droplet_id: int) -> str:
-        """Assigns a floating_ip to a droplet
+        """Assigns a floating ip to a droplet
 
-        :param floating_ip: floating ip
-        :type floating_ip: str
-        :param droplet_id: droplet id
-        :type droplet_id: int
-        :return: droplet id that received the new floating ip
-        :rtype: str
+        Args:
+            floating_ip (str): Floating IP (i.e.: `125.68.75.2`)
+            droplet_id (int): The droplet ID
+
+        Raises:
+            FloatingIpAssignmentError: if not completed
+
+        Returns:
+            str: return `completed` if completed
         """
+
         url = self.__base_url + '/floating_ips/' + floating_ip + '/actions'
         data = {
             "type": "assign",
@@ -80,15 +113,15 @@ class Automator:
             return 'completed'
 
     def create_droplet_from_snapshot(self, droplet: Droplet) -> int:
-        """creates droplet from snapshot
+        """Creates droplet from snapshot/image
 
-        :param droplet: Droplet object to be created on DO
-        :type droplet: Droplet
-        :param snapshot_id: snapshot ID
-        :type snapshot_id: int
-        :return: created droplet ID
-        :rtype: int
+        Args:
+            droplet (Droplet): Droplet object
+
+        Returns:
+            int: `droplet_id` from created droplet
         """
+
         headers = {'Content-Type': 'application/json'}
         created_droplet = self.requests.post(
             self.__base_url + '/droplets', data=droplet.json(), headers=headers)
@@ -103,6 +136,18 @@ class Automator:
         return created_droplet.json()['droplet']['id']
 
     def destroy_droplet(self, droplet_id: int) -> str:
+        """Destroy / Delete droplet
+
+        Args:
+            droplet_id (int): droplet id to be destroyed
+
+        Raises:
+            DestroyDropletError: if droplet is not destroyed
+
+        Returns:
+            str: `completed` if destroyed
+        """
+
         response = self.requests.delete(
             self.__base_url + '/droplets/' + str(droplet_id)
         )
@@ -125,13 +170,13 @@ class Automator:
         return action_status
 
     def __check_action_status(self, action_id: int) -> str:
-        """
-        Check action status
+        """Checks digital ocean action status
 
-        :param action_id: action ID
-        :type action_id: int
-        :return: action status (in-progress, completed, errored)
-        :rtype: str
+        Args:
+            action_id (int): Digital Ocean action id
+
+        Returns:
+            str: action status (`in-progress`, `completed`, `errored`)
         """
         print('Entered __check_action_status')
 
