@@ -1,0 +1,754 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-6.1.0" name="generator"/>
+<title>API Reference - Pydoautomator</title>
+<link href="../assets/stylesheets/main.bc7e593a.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab28b872.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+</head>
+<body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#automator">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="Pydoautomator" class="md-header-nav__button md-logo" href=".." title="Pydoautomator">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
+            Pydoautomator
+          </span>
+<span class="md-header-nav__topic md-ellipsis">
+            
+              API Reference
+            
+          </span>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Pydoautomator" class="md-nav__button md-logo" href=".." title="Pydoautomator">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    Pydoautomator
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+      Getting Started
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        API Reference
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+      API Reference
+    </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#automator-methods">
+    Automator Methods
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator">
+    pydoautomator.automator.Automator
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator.__init__">
+    __init__()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator.assign_floating_ip_to_droplet">
+    assign_floating_ip_to_droplet()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator.create_droplet_from_snapshot">
+    create_droplet_from_snapshot()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator.destroy_droplet">
+    destroy_droplet()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator.get_all_droplets">
+    get_all_droplets()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator.turnoff_droplet">
+    turnoff_droplet()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#automator-methods">
+    Automator Methods
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator">
+    pydoautomator.automator.Automator
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator.__init__">
+    __init__()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator.assign_floating_ip_to_droplet">
+    assign_floating_ip_to_droplet()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator.create_droplet_from_snapshot">
+    create_droplet_from_snapshot()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator.destroy_droplet">
+    destroy_droplet()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator.get_all_droplets">
+    get_all_droplets()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pydoautomator.automator.Automator.turnoff_droplet">
+    turnoff_droplet()
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<h1 id="automator">Automator</h1>
+<h2 id="automator-methods">Automator Methods</h2>
+<div class="doc doc-object doc-class">
+<h2 class="hidden-toc" href="#pydoautomator.automator.Automator" id="pydoautomator.automator.Automator" style="visibility: hidden; position: absolute;">
+</h2>
+<div class="doc doc-contents first">
+<p>Here are the main methods / functions
+Call this class passing the Digital Ocean TOKEN.</p>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TurnoffDropletError</code></td>
+<td>
+<p>Error while shutting down droplet</p>
+</td>
+</tr>
+<tr>
+<td><code>FloatingIpAssignmentError</code></td>
+<td>
+<p>Error while assigning floating ip</p>
+</td>
+</tr>
+<tr>
+<td><code>DestroyDropletError</code></td>
+<td>
+<p>Error while destroying droplet</p>
+</td>
+</tr>
+<tr>
+<td><code>DropletCreationError</code></td>
+<td>
+<p>Error while creating droplet</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="doc doc-children">
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="pydoautomator.automator.Automator.__init__">
+<code class="highlight language-python">
+__init__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">do_token</span><span class="p">)</span> </code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-special"><code>special</code></small>
+</span>
+</h2>
+<div class="doc doc-contents">
+<p>constructor</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>do_token</code></td>
+<td><code>str</code></td>
+<td>
+<p>digital ocean token</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>pydoautomator/automator.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">do_token</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="sd">"""constructor</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        do_token (str): digital ocean token</span>
+<span class="sd">    """</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">do_token</span> <span class="o">=</span> <span class="n">do_token</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">api_adapter</span> <span class="o">=</span> <span class="n">ApiAdapter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">do_token</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">requests</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_adapter</span><span class="o">.</span><span class="n">requests</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__base_url</span> <span class="o">=</span> <span class="s1">'https://api.digitalocean.com/v2'</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="pydoautomator.automator.Automator.assign_floating_ip_to_droplet">
+<code class="highlight language-python">
+assign_floating_ip_to_droplet<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">floating_ip</span><span class="p">,</span> <span class="n">droplet_id</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Assigns a floating ip to a droplet</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>floating_ip</code></td>
+<td><code>str</code></td>
+<td>
+<p>Floating IP (i.e.: <code>125.68.75.2</code>)</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>droplet_id</code></td>
+<td><code>int</code></td>
+<td>
+<p>The droplet ID</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FloatingIpAssignmentError</code></td>
+<td>
+<p>if not completed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td>
+<p>str: return <code>completed</code> if completed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>pydoautomator/automator.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">assign_floating_ip_to_droplet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">floating_ip</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">droplet_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">"""Assigns a floating ip to a droplet</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        floating_ip (str): Floating IP (i.e.: `125.68.75.2`)</span>
+<span class="sd">        droplet_id (int): The droplet ID</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        FloatingIpAssignmentError: if not completed</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: return `completed` if completed</span>
+<span class="sd">    """</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__base_url</span> <span class="o">+</span> <span class="s1">'/floating_ips/'</span> <span class="o">+</span> <span class="n">floating_ip</span> <span class="o">+</span> <span class="s1">'/actions'</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"assign"</span><span class="p">,</span>
+        <span class="s2">"droplet_id"</span><span class="p">:</span> <span class="n">droplet_id</span>
+    <span class="p">}</span>
+
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">201</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">FloatingIpAssignmentError</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+    <span class="n">action_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'action'</span><span class="p">][</span><span class="s1">'id'</span><span class="p">]</span>
+
+    <span class="n">loop2</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+    <span class="n">loop2</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__wait_till_action_complete</span><span class="p">(</span><span class="n">action_id</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">201</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">'completed'</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="pydoautomator.automator.Automator.create_droplet_from_snapshot">
+<code class="highlight language-python">
+create_droplet_from_snapshot<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">droplet</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Creates droplet from snapshot/image</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>droplet</code></td>
+<td><code>Droplet</code></td>
+<td>
+<p>Droplet object</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td>
+<p>int: <code>droplet_id</code> from created droplet</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>pydoautomator/automator.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">create_droplet_from_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">droplet</span><span class="p">:</span> <span class="n">Droplet</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">"""Creates droplet from snapshot/image</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        droplet (Droplet): Droplet object</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        int: `droplet_id` from created droplet</span>
+<span class="sd">    """</span>
+
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">}</span>
+    <span class="n">created_droplet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__base_url</span> <span class="o">+</span> <span class="s1">'/droplets'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">droplet</span><span class="o">.</span><span class="n">json</span><span class="p">(),</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+    <span class="n">action_id</span> <span class="o">=</span> <span class="n">created_droplet</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'links'</span><span class="p">][</span><span class="s1">'actions'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'id'</span><span class="p">]</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+
+    <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__wait_till_action_complete</span><span class="p">(</span><span class="n">action_id</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">created_droplet</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'droplet'</span><span class="p">][</span><span class="s1">'id'</span><span class="p">]</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="pydoautomator.automator.Automator.destroy_droplet">
+<code class="highlight language-python">
+destroy_droplet<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">droplet_id</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Destroy / Delete droplet</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>droplet_id</code></td>
+<td><code>int</code></td>
+<td>
+<p>droplet id to be destroyed</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DestroyDropletError</code></td>
+<td>
+<p>if droplet is not destroyed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td>
+<p>str: <code>completed</code> if destroyed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>pydoautomator/automator.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">destroy_droplet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">droplet_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">"""Destroy / Delete droplet</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        droplet_id (int): droplet id to be destroyed</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        DestroyDropletError: if droplet is not destroyed</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: `completed` if destroyed</span>
+<span class="sd">    """</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__base_url</span> <span class="o">+</span> <span class="s1">'/droplets/'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">droplet_id</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">204</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">DestroyDropletError</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="s1">'completed'</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="pydoautomator.automator.Automator.get_all_droplets">
+<code class="highlight language-python">
+get_all_droplets<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Get all droplets from Digital Ocean</p>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list</code></td>
+<td>
+<p>list: list of droplets (dict)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>pydoautomator/automator.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_all_droplets</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="sd">"""Get all droplets from Digital Ocean</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: list of droplets (dict)</span>
+<span class="sd">    """</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__base_url</span><span class="o">+</span><span class="s1">'/droplets'</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'droplets'</span><span class="p">]</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="pydoautomator.automator.Automator.turnoff_droplet">
+<code class="highlight language-python">
+turnoff_droplet<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">droplet_id</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Turnoff / Shutdown Droplet</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>droplet_id</code></td>
+<td><code>int</code></td>
+<td>
+<p>droplet id</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TurnoffDropletError</code></td>
+<td>
+<p>Error if droplet is not shutdown</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td>
+<p>str: <code>completed</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>pydoautomator/automator.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">turnoff_droplet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">droplet_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">"""Turnoff / Shutdown Droplet</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        droplet_id (int): droplet id</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TurnoffDropletError: Error if droplet is not shutdown</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: `completed`</span>
+<span class="sd">    """</span>
+
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">}</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'type'</span><span class="p">:</span> <span class="s1">'shutdown'</span><span class="p">}</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__base_url</span><span class="o">+</span><span class="s1">'/droplets/'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">droplet_id</span><span class="p">)</span><span class="o">+</span><span class="s1">'/actions'</span><span class="p">,</span>
+        <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+        <span class="n">json</span><span class="o">=</span><span class="n">data</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">201</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">TurnoffDropletError</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+    <span class="n">action_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'action'</span><span class="p">][</span><span class="s1">'id'</span><span class="p">]</span>
+
+    <span class="n">loop2</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+    <span class="n">loop2</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__wait_till_action_complete</span><span class="p">(</span><span class="n">action_id</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="s2">"completed"</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href=".." rel="prev">
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Getting Started
+              </div>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+<script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+<script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+</body>
+</html>
