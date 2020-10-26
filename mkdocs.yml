@@ -1,9 +1,14 @@
 site_name: Pydoautomator
 
+theme: material
+
+markdown_extensions:
+    - admonition
+    - codehilite
 
 nav:
-    - Getting Started: 'getting_started.md'
-    - Automator: 'automator.md'
+    - Getting Started: 'index.md'
+    - API Reference: 'api_reference.md'
 
 plugins:
     - mkdocstrings:
