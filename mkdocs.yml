@@ -1,0 +1,13 @@
+site_name: Pydoautomator
+
+theme: readthedocs
+
+nav:
+    - Getting Started: 'getting_started.md'
+    - Automator: 'automator.md'
+
+plugins:
+    - mkdocstrings:
+        default_handler: python
+        watch:
+            - pydoautomator
