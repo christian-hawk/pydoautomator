@@ -1,9 +1,5 @@
 version: 2
 
-mkdocs:
-  configuration: mkdocs.yml
-  fail_on_warning: false
-
 python:
     version: 3.6
     install:
@@ -11,3 +7,9 @@ python:
           path: .
           extra_requirements:
               - mkdocstrings
+              - mkdocs-material
+
+mkdocs:
+  configuration: mkdocs.yml
+  fail_on_warning: false
+
