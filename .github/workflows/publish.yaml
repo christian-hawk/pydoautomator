@@ -1,0 +1,26 @@
+name: Deploy Python Package
+
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Set up Python
+              uses: actions/setup-python@v2
+              with:
+                python-version: '3.6'
+            - name: Install dependencies
+              run: |
+                python --version
+                python -m pip install poetry
+                python -m pip install --upgrade pip
+                poetry install
+            - name: Deploy to Pypi
+              env: PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+              run: |
+                poetry config pypi-token.pypi $PYPI_TOKEN
+                poetry run publish --build
