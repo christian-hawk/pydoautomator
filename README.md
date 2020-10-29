@@ -88,3 +88,9 @@ aut.turnoff_droplet(droplet_id)
 droplet_id = 123456
 aut.destroy_droplet(droplet_id)
 ```
+
+### Get all droplets
+
+```python
+droplets_list = aut.get_all_droplets(droplet_id)
+```

@@ -1,7 +1,12 @@
 import json
 
-# Test data
 
+def get_json_from_file(filename):
+    with open('tests/test_data/%s' % filename) as json_file:
+        return json.load(json_file)
+
+
+# Test data
 valid_droplet = {
     "name": "t1.techno24x7.com",
     "region": "nyc1",
