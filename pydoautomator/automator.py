@@ -77,10 +77,8 @@ class Automator:
         droplets = response.json()['droplets']
 
         while 'next' in response.json()['links']['pages']:
-            print('called')
             response = self.requests.get(
                 response.json()['links']['pages']['next'])
-            print('requested')
             droplets = droplets + response.json()['droplets']
 
         return droplets
