@@ -16,12 +16,13 @@ jobs:
             - name: Install dependencies
               run: |
                 python --version
+                python -m pip install wheel
                 python -m pip install poetry
                 python -m pip install --upgrade pip
                 poetry install
             - name: Deploy to Pypi
               env:
-                PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+                PYPI_USERNAME: ${{ secrets.PYPI_USERNAME }}
+                PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
               run: |
-                poetry config pypi-token.pypi $PYPI_TOKEN
-                poetry run publish --build
+                poetry run publish --build -u $PYPI_USERNAME -p $PYPI_PASSWORD
