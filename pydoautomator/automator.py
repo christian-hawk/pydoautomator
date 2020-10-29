@@ -74,8 +74,14 @@ class Automator:
         """
 
         response = self.requests.get(self.__base_url+'/droplets')
+        droplets = response.json()['droplets']
 
-        return response.json()['droplets']
+        while 'next' in response.json()['links']['pages']:
+            response = self.requests.get(
+                response.json()['links']['pages']['next'])
+            droplets = droplets + response.json()['droplets']
+
+        return droplets
 
     def assign_floating_ip_to_droplet(self, floating_ip: str, droplet_id: int) -> str:
         """Assigns a floating ip to a droplet
