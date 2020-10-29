@@ -1,6 +1,9 @@
 # pydoautomator
 
-[![codecov](https://codecov.io/gh/christian-hawk/pydoautomator/branch/master/graph/badge.svg)](https://codecov.io/gh/christian-hawk/pydoautomator)  [![DeepSource](https://deepsource.io/gh/christian-hawk/pydoautomator.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/christian-hawk/pydoautomator/?ref=repository-badge) [![Actions Status](https://github.com/christian-hawk/pydoautomator/workflows/Python/badge.svg)](https://github.com/christian-hawk/pydoautomator/actions)
+[![Downloads](https://pepy.tech/badge/pydoautomator/month)](https://pepy.tech/project/pydoautomator)
+[![codecov](https://codecov.io/gh/christian-hawk/pydoautomator/branch/master/graph/badge.svg)](https://codecov.io/gh/christian-hawk/pydoautomator)
+[![DeepSource](https://deepsource.io/gh/christian-hawk/pydoautomator.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/christian-hawk/pydoautomator/?ref=repository-badge) [![Actions Status](https://github.com/christian-hawk/pydoautomator/workflows/Python/badge.svg)](https://github.com/christian-hawk/pydoautomator/actions)
+[![Python Versions](https://img.shields.io/pypi/pyversions/pydoautomator.svg)](https://pypi.org/project/pydoautomator)
 
 The Digital Ocean python automation lib
 

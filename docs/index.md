@@ -1,7 +1,11 @@
-# Welcome to Pydoautomator
-[![codecov](https://codecov.io/gh/christian-hawk/pydoautomator/branch/master/graph/badge.svg)](https://codecov.io/gh/christian-hawk/pydoautomator)  [![DeepSource](https://deepsource.io/gh/christian-hawk/pydoautomator.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/christian-hawk/pydoautomator/?ref=repository-badge)
+# pydoautomator
 
-### The Python Digital Ocean Automation Lib
+[![Downloads](https://pepy.tech/badge/pydoautomator/month)](https://pepy.tech/project/pydoautomator/month)
+[![codecov](https://codecov.io/gh/christian-hawk/pydoautomator/branch/master/graph/badge.svg)](https://codecov.io/gh/christian-hawk/pydoautomator)
+[![DeepSource](https://deepsource.io/gh/christian-hawk/pydoautomator.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/christian-hawk/pydoautomator/?ref=repository-badge) [![Actions Status](https://github.com/christian-hawk/pydoautomator/workflows/Python/badge.svg)](https://github.com/christian-hawk/pydoautomator/actions)
+[![Python Versions](https://img.shields.io/pypi/pyversions/pydoautomator.svg)](https://pypi.org/project/pydoautomator)
+
+The Digital Ocean python automation lib
 
 ## Install
 
@@ -86,4 +90,10 @@ aut.turnoff_droplet(droplet_id)
 ```python
 droplet_id = 123456
 aut.destroy_droplet(droplet_id)
+```
+
+### Get all droplets
+
+```python
+droplets_list = aut.get_all_droplets(droplet_id)
 ```
