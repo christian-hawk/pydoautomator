@@ -1,13 +1,3 @@
-## 0.8.3 (2020-10-29)
-
-### Refactor
-
-- **automator.py**: remove unecessary prints
-
-### Fix
-
-- **get_all_droplets**: Fix no pagination handling
-
 ## 0.8.2 (2020-10-25)
 
 ### Refactor
