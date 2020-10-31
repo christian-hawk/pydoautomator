@@ -592,8 +592,14 @@ get_all_droplets<span class="p">(</span><span class="bp">self</span><span class=
 <span class="sd">    """</span>
 
     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__base_url</span><span class="o">+</span><span class="s1">'/droplets'</span><span class="p">)</span>
+    <span class="n">droplets</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'droplets'</span><span class="p">]</span>
 
-    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'droplets'</span><span class="p">]</span>
+    <span class="k">while</span> <span class="s1">'next'</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'links'</span><span class="p">][</span><span class="s1">'pages'</span><span class="p">]:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'links'</span><span class="p">][</span><span class="s1">'pages'</span><span class="p">][</span><span class="s1">'next'</span><span class="p">])</span>
+        <span class="n">droplets</span> <span class="o">=</span> <span class="n">droplets</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'droplets'</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">droplets</span>
 </code></pre>
 </div>
 </details>
